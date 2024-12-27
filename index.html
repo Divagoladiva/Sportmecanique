@@ -171,9 +171,11 @@
     <script>
         function scrollToSection(id) {
             const section = document.getElementById(id);
-            section.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const offset = section.getBoundingClientRect().top + window.pageYOffset - (window.innerHeight / 2) + (section.clientHeight / 2);
+
+            window.scrollTo({
+                top: offset,
+                behavior: 'smooth'
             });
         }
     </script>
