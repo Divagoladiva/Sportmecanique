@@ -13,7 +13,7 @@
             color: #333;
             display: flex;
             flex-direction: column;
-            height: 100vh; /* Assure que la hauteur de la page occupe tout l'écran */
+            min-height: 100vh; /* Pour garantir que le corps prend toute la hauteur de la page */
             overflow-x: hidden; /* Désactive le défilement horizontal */
         }
 
@@ -57,9 +57,9 @@
             background-size: 55px 55px;
             text-align: center;
             padding: 100px 20px 80px; /* Laissez de l'espace en haut et en bas pour le header et footer */
-            overflow-y: auto;
             margin-top: 80px; /* Décalage vers le bas pour laisser de la place au header */
             margin-bottom: 60px; /* Décalage vers le haut pour laisser de la place au footer */
+            overflow-y: auto;
         }
 
         .buttons {
