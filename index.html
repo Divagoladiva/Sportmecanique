@@ -14,6 +14,8 @@
             background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
                 linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
             background-size: 55px 55px;
+            position: relative;
+            z-index: 1; /* Fond au bas */
         }
 
         /* Fond dynamique prenant toute la page, même en défilant */
@@ -22,7 +24,7 @@
             position: fixed;
             inset: 0;
             z-index: -1; /* S'assurer que le fond soit derrière tout le contenu */
-            background-color: #191a1a; /* Fond uni sans pixel rond */
+            background-color: #191a1a;
             background-image: linear-gradient(
                 0deg,
                 transparent 24%,
@@ -74,6 +76,7 @@
             text-align: center;
             flex-grow: 1;
             position: relative;
+            z-index: 2; /* Assurez-vous que le texte est au-dessus du fond dynamique */
         }
 
         /* Titre de la section "Qu'est-ce que les sports mécaniques ?" */
@@ -128,7 +131,7 @@
 
         /* Conteneur des sections avec texte */
         .section {
-            position: relative; /* Pour garantir qu'elles se placent au-dessus du fond animé */
+            position: relative;
             margin-top: 30px;
             background: #313131;
             background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
@@ -155,7 +158,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            z-index: 1;
+            z-index: 1; /* S'assurer que le fond est derrière */
             background-color: #191a1a; /* Fond uni sans pixel rond */
             background-image: linear-gradient(
                 0deg,
