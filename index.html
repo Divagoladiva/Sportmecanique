@@ -42,16 +42,7 @@
                 radial-gradient(1.5px 1.5px at 150px 126px, var(--c) 100%, #0000 150%),
                 radial-gradient(4px 100px at 0px 150px, var(--c), #0000),
                 radial-gradient(4px 100px at 300px 150px, var(--c), #0000),
-                radial-gradient(1.5px 1.5px at 150px 75px, var(--c) 100%, #0000 150%),
-                radial-gradient(4px 100px at 0px 253px, var(--c), #0000),
-                radial-gradient(4px 100px at 300px 253px, var(--c), #0000),
-                radial-gradient(1.5px 1.5px at 150px 126.5px, var(--c) 100%, #0000 150%),
-                radial-gradient(4px 100px at 0px 204px, var(--c), #0000),
-                radial-gradient(4px 100px at 300px 204px, var(--c), #0000),
-                radial-gradient(1.5px 1.5px at 150px 102px, var(--c) 100%, #0000 150%),
-                radial-gradient(4px 100px at 0px 253px, var(--c), #0000),
-                radial-gradient(4px 100px at 300px 253px, var(--c), #0000),
-                radial-gradient(1.5px 1.5px at 150px 126.5px, var(--c) 100%, #0000 150%);
+                radial-gradient(1.5px 1.5px at 150px 75px, var(--c) 100%, #0000 150%);
             background-size:
                 300px 235px,
                 300px 235px,
@@ -61,34 +52,7 @@
                 300px 252px,
                 300px 150px,
                 300px 150px,
-                300px 150px,
-                300px 253px,
-                300px 253px,
-                300px 253px,
-                300px 204px,
-                300px 204px,
-                300px 204px,
-                300px 134px,
-                300px 134px,
-                300px 134px,
-                300px 179px,
-                300px 179px,
-                300px 179px,
-                300px 299px,
-                300px 299px,
-                300px 299px,
-                300px 215px,
-                300px 215px,
-                300px 215px,
-                300px 281px,
-                300px 281px,
-                300px 281px,
-                300px 158px,
-                300px 158px,
-                300px 158px,
-                300px 210px,
-                300px 210px,
-                300px 210px;
+                300px 150px;
             animation: hi 150s linear infinite;
         }
 
@@ -97,15 +61,13 @@
                 background-position:
                     0px 220px,
                     3px 220px,
-                    151.5px 337.5px,
-                    25px 24px;
+                    151.5px 337.5px;
             }
             to {
                 background-position:
                     0px 6800px,
                     3px 6800px,
-                    151.5px 6917.5px,
-                    25px 13632px;
+                    151.5px 6917.5px;
             }
         }
 
@@ -122,8 +84,8 @@
             overflow-x: hidden;
         }
 
-        /* Fixer le header et le footer */
-        header, footer {
+        /* Fixer le header */
+        header {
             background-color: #313131;
             background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
             background-size: 30px 30px;
@@ -134,21 +96,13 @@
             border-radius: 8px;
             position: fixed;
             width: 100%;
+            top: 0;
             z-index: 10;
         }
 
-        header {
-            top: 0;
-        }
-
-        footer {
-            bottom: 0;
-        }
-
-        /* Conteneur principal avec des marges pour laisser de l'espace pour le header et footer */
+        /* Conteneur principal avec des marges pour laisser de l'espace pour le header */
         .container {
             margin-top: 100px; /* Décalage pour laisser de l'espace pour le header */
-            margin-bottom: 80px; /* Décalage pour laisser de l'espace pour le footer */
             padding: 20px;
             text-align: center;
             flex-grow: 1;
@@ -206,7 +160,7 @@
             width: 60%; /* Largeur ajustée */
             margin-left: auto;
             margin-right: auto;
-            z-index: 3; /* Placé plus bas que le conteneur du titre */
+            z-index: 5; /* Plus bas que le conteneur du titre */
         }
 
         .section h2 {
@@ -250,9 +204,5 @@
             <p>Le karting est souvent la première étape pour les pilotes en herbe. Accessible à tous, il est parfait pour s'initier aux sports mécaniques.</p>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Tous droits réservés | Sports Mécaniques</p>
-    </footer>
 </body>
 </html>
