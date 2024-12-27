@@ -141,7 +141,7 @@
         }
 
         /* Fixer le header et le footer */
-        header {
+        header, footer {
             background-color: #313131;
             background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
             background-size: 30px 30px;
@@ -155,19 +155,12 @@
             z-index: 10;
         }
 
+        header {
+            top: 0;
+        }
+
         footer {
-            background-color: #313131;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-            background-size: 30px 30px;
-            background-position: -5px -5px;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-            position: fixed;
-            width: 100%;
             bottom: 0;
-            z-index: 10;
         }
 
         /* Conteneur principal avec des marges pour laisser de l'espace pour le header et footer */
@@ -178,7 +171,7 @@
             text-align: center;
             flex-grow: 1;
             overflow-y: auto;
-            z-index: 2;
+            position: relative; /* Position relative pour contenir les éléments qui doivent se superposer */
         }
 
         /* Conteneur des boutons */
@@ -187,7 +180,8 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            z-index: 3;
+            position: relative;
+            z-index: 20; /* Plus élevé que celui de l'arrière-plan */
         }
 
         /* Style des boutons */
@@ -274,7 +268,7 @@
     </div>
 
     <footer>
-        <p>© 2024 Sports Mécaniques</p>
+        <p>&copy; 2024 Tous droits réservés | Sports Mécaniques</p>
     </footer>
 </body>
 </html>
