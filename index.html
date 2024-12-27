@@ -11,8 +11,12 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Assure que la hauteur de la page occupe tout l'écran */
             overflow-x: hidden; /* Désactive le défilement horizontal */
         }
+
         header {
             background-color: #313131;
             background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
@@ -23,23 +27,26 @@
             text-align: center;
             border-radius: 8px;
         }
+
         .container {
             width: 100%;
-            height: auto;
-            --color: #E1E1E1;
+            flex-grow: 1; /* Permet au container de s'étendre pour occuper l'espace restant */
             background-color: #F3F3F3;
-            background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
-                linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+            background-image: linear-gradient(0deg, transparent 24%, #E1E1E1 25%, #E1E1E1 26%, transparent 27%, transparent 74%, #E1E1E1 75%, #E1E1E1 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, #E1E1E1 25%, #E1E1E1 26%, transparent 27%, transparent 74%, #E1E1E1 75%, #E1E1E1 76%, transparent 77%, transparent);
             background-size: 55px 55px;
             text-align: center;
             padding: 20px;
+            overflow-y: auto; /* Permet le défilement vertical si nécessaire */
         }
+
         .buttons {
             margin-bottom: 30px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
         }
+
         /* Style des boutons */
         button {
             background: #fbca1f;
@@ -75,7 +82,8 @@
             color: #fff;
             margin-bottom: 20px;
             display: block;
-            width: 100%;
+            width: auto; /* La largeur s'ajuste en fonction du contenu */
+            max-width: 100%; /* Ne dépasse pas la largeur de la page */
         }
 
         footer {
@@ -88,6 +96,7 @@
             color: #fff;
             margin-top: 20px;
             border-radius: 8px;
+            flex-shrink: 0; /* Empêche le footer de se rétrécir */
         }
     </style>
     <script>
