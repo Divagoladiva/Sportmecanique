@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Mécaniques</title>
     <style>
+        /* Style général du body */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,11 +14,12 @@
             color: #333;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Pour garantir que le corps prend toute la hauteur de la page */
-            overflow-x: hidden; /* Désactive le défilement horizontal */
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        header {
+        /* Style du header et footer */
+        header, footer {
             background-color: #313131;
             background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
             background-size: 30px 30px;
@@ -27,38 +29,25 @@
             text-align: center;
             border-radius: 8px;
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            width: 100%;
             z-index: 10;
+        }
+
+        header {
+            top: 0;
         }
 
         footer {
-            background-color: #313131;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-            background-size: 30px 30px;
-            background-position: -5px -5px;
-            text-align: center;
-            padding: 20px;
-            color: #fff;
-            position: fixed;
             bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 10;
         }
 
+        /* Container du contenu */
         .container {
-            width: 100%;
-            flex-grow: 1;
-            background-color: #F3F3F3;
-            background-image: linear-gradient(0deg, transparent 24%, #E1E1E1 25%, #E1E1E1 26%, transparent 27%, transparent 74%, #E1E1E1 75%, #E1E1E1 76%, transparent 77%, transparent),
-                linear-gradient(90deg, transparent 24%, #E1E1E1 25%, #E1E1E1 26%, transparent 27%, transparent 74%, #E1E1E1 75%, #E1E1E1 76%, transparent 77%, transparent);
-            background-size: 55px 55px;
+            margin-top: 100px; /* Décalage pour laisser de l'espace pour le header */
+            margin-bottom: 80px; /* Décalage pour laisser de l'espace pour le footer */
+            padding: 20px;
             text-align: center;
-            padding: 100px 20px 80px; /* Laissez de l'espace en haut et en bas pour le header et footer */
-            margin-top: 80px; /* Décalage vers le bas pour laisser de la place au header */
-            margin-bottom: 60px; /* Décalage vers le haut pour laisser de la place au footer */
+            flex-grow: 1;
             overflow-y: auto;
         }
 
@@ -92,6 +81,7 @@
             box-shadow: 0.05em 0.05em;
         }
 
+        /* Style des sections */
         .section {
             margin-top: 30px;
             background: #313131;
@@ -102,10 +92,9 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             color: #fff;
-            margin-bottom: 30px; /* Ajoute de l'espace entre les sections */
-            display: block;
+            margin-bottom: 30px;
             width: auto;
-            max-width: 80%;
+            max-width: 80%; /* Limite la largeur du contenu */
             margin: 0 auto;
         }
 
@@ -117,10 +106,9 @@
     <script>
         function scrollToSection(id) {
             const section = document.getElementById(id);
-            section.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'center', 
-                inline: 'nearest'  // Empêche le défilement horizontal
+            section.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
         }
     </script>
@@ -129,12 +117,15 @@
     <header>
         <h1>Bienvenue dans l'univers des Sports Mécaniques</h1>
     </header>
+
     <div class="container">
         <div class="buttons">
             <button onclick="scrollToSection('moto')">Moto</button>
             <button onclick="scrollToSection('auto')">Automobile</button>
             <button onclick="scrollToSection('karting')">Karting</button>
         </div>
+        
+        <!-- Sections de contenu -->
         <div id="moto" class="section">
             <h2>Moto</h2>
             <p>Les courses de moto, comme le MotoGP et le Superbike, offrent des sensations fortes. Ces compétitions mettent en avant l'adresse des pilotes et la technologie des machines.</p>
@@ -148,6 +139,7 @@
             <p>Le karting est souvent la première étape pour les pilotes en herbe. Accessible à tous, il est parfait pour s'initier aux sports mécaniques.</p>
         </div>
     </div>
+
     <footer>
         <p>&copy; 2024 Tous droits réservés | Sports Mécaniques</p>
     </footer>
