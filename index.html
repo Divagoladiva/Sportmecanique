@@ -39,52 +39,27 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        /* From Uiverse.io by cssbuttons-io */
+        /* Style des boutons */
         button {
-            align-items: center;
-            background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
-            border: 0;
-            border-radius: 8px;
-            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-            box-sizing: border-box;
-            color: #ffffff;
-            display: flex;
-            font-size: 20px;
-            justify-content: center;
-            line-height: 1em;
-            max-width: 100%;
-            min-width: 180px;
-            padding: 3px;
-            text-decoration: none;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-            white-space: nowrap;
+            background: #fbca1f;
+            font-family: inherit;
+            padding: 0.6em 1.3em;
+            font-weight: 900;
+            font-size: 18px;
+            border: 3px solid black;
+            border-radius: 0.4em;
+            box-shadow: 0.1em 0.1em;
             cursor: pointer;
-            transition: all 0.3s;
-            margin: 15px;
         }
 
-        button:active,
         button:hover {
-            outline: 0;
-        }
-
-        button span {
-            background-color: rgb(5, 6, 45);
-            padding: 20px 30px;
-            border-radius: 6px;
-            width: 100%;
-            height: 100%;
-            transition: 300ms;
-        }
-
-        button:hover span {
-            background: none;
+            transform: translate(-0.05em, -0.05em);
+            box-shadow: 0.15em 0.15em;
         }
 
         button:active {
-            transform: scale(0.9);
+            transform: translate(0.05em, 0.05em);
+            box-shadow: 0.05em 0.05em;
         }
 
         .section {
@@ -126,9 +101,9 @@
     </header>
     <div class="container">
         <div class="buttons">
-            <button onclick="showSection('moto')"><span>Moto</span></button>
-            <button onclick="showSection('auto')"><span>Automobile</span></button>
-            <button onclick="showSection('karting')"><span>Karting</span></button>
+            <button onclick="showSection('moto')">Moto</button>
+            <button onclick="showSection('auto')">Automobile</button>
+            <button onclick="showSection('karting')">Karting</button>
         </div>
         <div id="moto" class="section">
             <h2>Moto</h2>
