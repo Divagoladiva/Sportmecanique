@@ -18,7 +18,7 @@
             overflow-x: hidden;
         }
 
-        /* Style du header et footer */
+        /* Fixer le header et le footer */
         header, footer {
             background-color: #313131;
             background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
@@ -41,7 +41,7 @@
             bottom: 0;
         }
 
-        /* Container du contenu */
+        /* Conteneur principal avec des marges pour laisser de l'espace pour le header et footer */
         .container {
             margin-top: 100px; /* Décalage pour laisser de l'espace pour le header */
             margin-bottom: 80px; /* Décalage pour laisser de l'espace pour le footer */
@@ -51,6 +51,7 @@
             overflow-y: auto;
         }
 
+        /* Conteneur des boutons */
         .buttons {
             margin-bottom: 30px;
             display: flex;
@@ -69,6 +70,7 @@
             border-radius: 0.4em;
             box-shadow: 0.1em 0.1em;
             cursor: pointer;
+            margin: 10px;
         }
 
         button:hover {
@@ -81,7 +83,7 @@
             box-shadow: 0.05em 0.05em;
         }
 
-        /* Style des sections */
+        /* Style des sections (espaces et tailles ajustées) */
         .section {
             margin-top: 30px;
             background: #313131;
@@ -93,13 +95,13 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             color: #fff;
             margin-bottom: 30px;
-            width: auto;
-            max-width: 80%; /* Limite la largeur du contenu */
-            margin: 0 auto;
+            width: 60%; /* Largeur ajustée */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section h2 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 10px;
         }
     </style>
