@@ -10,7 +10,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            z-index: 1;
+            z-index: 1; /* Fond derrière tout le contenu */
             background-image: radial-gradient(
                 circle at 50% 50%, #0000 0, #0000 2px, hsl(0 0 4%) 2px
             );
@@ -61,15 +61,9 @@
                 radial-gradient(4px 100px at 0px 215px, var(--c), #0000),
                 radial-gradient(4px 100px at 300px 215px, var(--c), #0000),
                 radial-gradient(1.5px 1.5px at 150px 107.5px, var(--c) 100%, #0000 150%),
-                radial-gradient(4px 100px at 0px 281px, var(--c), #0000),
-                radial-gradient(4px 100px at 300px 281px, var(--c), #0000),
-                radial-gradient(1.5px 1.5px at 150px 140.5px, var(--c) 100%, #0000 150%),
-                radial-gradient(4px 100px at 0px 158px, var(--c), #0000),
-                radial-gradient(4px 100px at 300px 158px, var(--c), #0000),
-                radial-gradient(1.5px 1.5px at 150px 79px, var(--c) 100%, #0000 150%),
-                radial-gradient(4px 100px at 0px 210px, var(--c), #0000),
-                radial-gradient(4px 100px at 300px 210px, var(--c), #0000),
-                radial-gradient(1.5px 1.5px at 150px 105px, var(--c) 100%, #0000 150%);
+                radial-gradient(4px 100px at 0px 253px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 253px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 126.5px, var(--c) 100%, #0000 150%);
             background-size:
                 300px 235px,
                 300px 235px,
@@ -108,6 +102,7 @@
                 300px 210px,
                 300px 210px;
             animation: hi 150s linear infinite;
+            z-index: 0; /* Fond derrière le contenu */
         }
 
         @keyframes hi {
@@ -164,11 +159,30 @@
         }
 
         /* Conteneur principal avec des marges pour laisser de l'espace pour le header et footer */
-        .container {
+        .content {
+            position: relative; /* Permet de mettre le texte au-dessus du fond */
+            z-index: 2; /* Assure que le contenu est au-dessus du fond */
             margin-top: 100px; /* Décalage pour laisser de l'espace pour le header */
             margin-bottom: 80px; /* Décalage pour laisser de l'espace pour le footer */
             flex: 1;
             padding: 20px;
+            text-align: center;
+        }
+
+        /* Style des boutons */
+        .btn {
+            background-color: #09f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #0077cc;
         }
     </style>
 </head>
@@ -177,8 +191,12 @@
         <h1>Sports Mécaniques</h1>
     </header>
     <div class="container">
-        <h2>Bienvenue dans le monde des sports mécaniques!</h2>
-        <p>Explorez les dernières nouvelles, événements, et bien plus!</p>
+        <div class="content">
+            <h2>Bienvenue dans le monde des sports mécaniques!</h2>
+            <p>Explorez les dernières nouvelles, événements, et bien plus!</p>
+            <button class="btn">En savoir plus</button>
+            <button class="btn">Voir les événements</button>
+        </div>
     </div>
     <footer>
         <p>© 2024 Sports Mécaniques</p>
