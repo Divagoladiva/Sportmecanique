@@ -5,60 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Mécaniques</title>
     <style>
-        /* Fond dynamique */
-        .container::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            background-image: radial-gradient(
-                circle at 50% 50%, #0000 0, #0000 2px, hsl(0 0 4%) 2px
-            );
-            background-size: 8px 8px;
-            --f: blur(1em) brightness(6);
-            animation: hii 10s linear infinite;
-        }
-
-        @keyframes hii {
-            0% {
-                backdrop-filter: var(--f) hue-rotate(0deg);
-            }
-            to {
-                backdrop-filter: var(--f) hue-rotate(360deg);
-            }
-        }
-
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            --c: #09f;
-            background-color: #000;
-            background-image: radial-gradient(4px 100px at 0px 235px, var(--c), #0000),
-                radial-gradient(4px 100px at 300px 235px, var(--c), #0000),
-                radial-gradient(1.5px 1.5px at 150px 117.5px, var(--c) 100%, #0000 150%);
-            background-size:
-                300px 235px,
-                300px 235px,
-                300px 235px;
-            animation: hi 150s linear infinite;
-        }
-
-        @keyframes hi {
-            0% {
-                background-position:
-                    0px 220px,
-                    3px 220px,
-                    151.5px 337.5px;
-            }
-            to {
-                background-position:
-                    0px 6800px,
-                    3px 6800px,
-                    151.5px 6917.5px;
-            }
-        }
-
         /* Style général du body */
         body {
             font-family: Arial, sans-serif;
@@ -95,7 +41,7 @@
             text-align: center;
             flex-grow: 1;
             overflow-y: auto;
-            position: relative; /* Position relative pour contenir les éléments qui doivent se superposer */
+            position: relative;
         }
 
         /* Conteneur des boutons */
@@ -105,7 +51,6 @@
             justify-content: center;
             flex-wrap: wrap;
             position: relative;
-            z-index: 5; /* Plus bas que les sections */
         }
 
         /* Style des boutons */
@@ -134,7 +79,7 @@
 
         /* Conteneur des sections avec texte */
         .section {
-            position: relative; /* Pour garantir qu'elles se placent au-dessus du fond animé */
+            position: relative;
             margin-top: 30px;
             background: #313131;
             background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
@@ -145,25 +90,138 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             color: #fff;
             margin-bottom: 30px;
-            width: 60%; /* Largeur ajustée */
+            width: 60%;
             margin-left: auto;
             margin-right: auto;
-            z-index: 5; /* Plus bas que le conteneur du titre */
         }
 
         .section h2 {
             font-size: 2em;
             margin-bottom: 10px;
         }
+
+        /* Style de la radio-container */
+        .radio-container {
+            --main-color: #f7e479;
+            --main-color-opacity: #f7e4791c;
+            --total-radio: 3;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-left: 0.5rem;
+            width: 200px;
+        }
+
+        .radio-container input {
+            cursor: pointer;
+            appearance: none;
+        }
+
+        .radio-container .glider-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(27, 27, 27, 1) 50%,
+                rgba(0, 0, 0, 0) 100%
+            );
+            width: 1px;
+        }
+
+        .radio-container .glider-container .glider {
+            position: relative;
+            height: calc(100% / var(--total-radio));
+            width: 100%;
+            background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0) 0%,
+                var(--main-color) 50%,
+                rgba(0, 0, 0, 0) 100%
+            );
+            transition: transform 0.5s cubic-bezier(0.37, 1.95, 0.66, 0.56);
+        }
+
+        .radio-container .glider-container .glider::before {
+            content: "";
+            position: absolute;
+            height: 60%;
+            width: 300%;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--main-color);
+            filter: blur(10px);
+        }
+
+        .radio-container .glider-container .glider::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 150px;
+            background: linear-gradient(
+                90deg,
+                var(--main-color-opacity) 0%,
+                rgba(0, 0, 0, 0) 100%
+            );
+        }
+
+        .radio-container label {
+            cursor: pointer;
+            padding: 1rem;
+            position: relative;
+            color: grey;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .radio-container input:checked + label {
+            color: var(--main-color);
+        }
+
+        .radio-container input:nth-of-type(1):checked ~ .glider-container .glider {
+            transform: translateY(0);
+        }
+
+        .radio-container input:nth-of-type(2):checked ~ .glider-container .glider {
+            transform: translateY(100%);
+        }
+
+        .radio-container input:nth-of-type(3):checked ~ .glider-container .glider {
+            transform: translateY(200%);
+        }
+
+        /* Styles pour afficher les textes correspondants */
+        .section-content {
+            margin-left: 220px; /* Pour laisser de l'espace pour la radio-container */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .section-content p {
+            font-size: 1.2em;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .radio-container input:nth-of-type(1):checked ~ .section-content .def {
+            display: block;
+        }
+
+        .radio-container input:nth-of-type(2):checked ~ .section-content .hist {
+            display: block;
+        }
+
+        .radio-container input:nth-of-type(3):checked ~ .section-content .comp {
+            display: block;
+        }
     </style>
     <script>
         function scrollToSection(id) {
             const section = document.getElementById(id);
-
-            // Calcule la position pour centrer la section dans la fenêtre
             const offset = section.offsetTop - (window.innerHeight / 2) + (section.offsetHeight / 2);
-
-            // Défilement avec un comportement smooth
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
@@ -183,18 +241,73 @@
             <button onclick="scrollToSection('karting')">Karting</button>
         </div>
         
-        <!-- Sections de contenu -->
+        <!-- Section Moto -->
         <div id="moto" class="section">
             <h2>Moto</h2>
-            <p>Les courses de moto, comme le MotoGP et le Superbike, offrent des sensations fortes. Ces compétitions mettent en avant l'adresse des pilotes et la technologie des machines.</p>
+            <div class="radio-container">
+                <input checked="" id="radio-free" name="radio" type="radio" />
+                <label for="radio-free">Définition</label>
+                <input id="radio-basic" name="radio" type="radio" />
+                <label for="radio-basic">Histoire</label>
+                <input id="radio-premium" name="radio" type="radio" />
+                <label for="radio-premium">Compétitions</label>
+
+                <div class="glider-container">
+                    <div class="glider"></div>
+                </div>
+            </div>
+
+            <div class="section-content">
+                <p class="def">La moto est un véhicule à deux roues, propulsé par un moteur. C'est un sport populaire, avec des compétitions comme le MotoGP.</p>
+                <p class="hist">L'histoire de la moto remonte à la fin du XIXe siècle, avec les premières machines motorisées à deux roues.</p>
+                <p class="comp">Les compétitions de moto incluent des événements célèbres comme le MotoGP, les courses d'endurance et les compétitions sur route.</p>
+            </div>
         </div>
+
+        <!-- Section Automobile -->
         <div id="auto" class="section">
             <h2>Automobile</h2>
-            <p>Les sports automobiles, notamment la Formule 1, le rallye et les courses d'endurance comme les 24 heures du Mans, combinent vitesse, stratégie et travail d'équipe.</p>
+            <div class="radio-container">
+                <input checked="" id="radio-free" name="radio" type="radio" />
+                <label for="radio-free">Définition</label>
+                <input id="radio-basic" name="radio" type="radio" />
+                <label for="radio-basic">Histoire</label>
+                <input id="radio-premium" name="radio" type="radio" />
+                <label for="radio-premium">Compétitions</label>
+
+                <div class="glider-container">
+                    <div class="glider"></div>
+                </div>
+            </div>
+
+            <div class="section-content">
+                <p class="def">L'automobile est un véhicule motorisé à quatre roues. Elle est utilisée pour le transport personnel et professionnel.</p>
+                <p class="hist">Les premières automobiles ont été créées à la fin du XIXe siècle, révolutionnant la mobilité et le transport mondial.</p>
+                <p class="comp">Les compétitions automobiles incluent la Formule 1, les rallyes et les courses d'endurance comme les 24 heures du Mans.</p>
+            </div>
         </div>
+
+        <!-- Section Karting -->
         <div id="karting" class="section">
             <h2>Karting</h2>
-            <p>Le karting est souvent la première étape pour les pilotes en herbe. Accessible à tous, il est parfait pour s'initier aux sports mécaniques.</p>
+            <div class="radio-container">
+                <input checked="" id="radio-free" name="radio" type="radio" />
+                <label for="radio-free">Définition</label>
+                <input id="radio-basic" name="radio" type="radio" />
+                <label for="radio-basic">Histoire</label>
+                <input id="radio-premium" name="radio" type="radio" />
+                <label for="radio-premium">Compétitions</label>
+
+                <div class="glider-container">
+                    <div class="glider"></div>
+                </div>
+            </div>
+
+            <div class="section-content">
+                <p class="def">Le karting est une forme de sport automobile pratiquée avec des karts, des véhicules à petite échelle et très rapides.</p>
+                <p class="hist">Le karting est né dans les années 1950 en Californie et a permis à de nombreux pilotes de passer à des courses professionnelles.</p>
+                <p class="comp">Les compétitions de karting se déroulent sur des circuits dédiés, avec des championnats nationaux et internationaux.</p>
+            </div>
         </div>
     </div>
 </body>
