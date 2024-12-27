@@ -26,18 +26,40 @@
             padding: 20px;
             text-align: center;
             border-radius: 8px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+
+        footer {
+            background-color: #313131;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+            background-size: 30px 30px;
+            background-position: -5px -5px;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
         }
 
         .container {
             width: 100%;
-            flex-grow: 1; /* Permet au container de s'étendre pour occuper l'espace restant */
+            flex-grow: 1;
             background-color: #F3F3F3;
             background-image: linear-gradient(0deg, transparent 24%, #E1E1E1 25%, #E1E1E1 26%, transparent 27%, transparent 74%, #E1E1E1 75%, #E1E1E1 76%, transparent 77%, transparent),
                 linear-gradient(90deg, transparent 24%, #E1E1E1 25%, #E1E1E1 26%, transparent 27%, transparent 74%, #E1E1E1 75%, #E1E1E1 76%, transparent 77%, transparent);
             background-size: 55px 55px;
             text-align: center;
-            padding: 20px;
-            overflow-y: auto; /* Permet le défilement vertical si nécessaire */
+            padding: 100px 20px 80px; /* Laissez de l'espace en haut et en bas pour le header et footer */
+            overflow-y: auto;
+            margin-top: 80px; /* Décalage vers le bas pour laisser de la place au header */
+            margin-bottom: 60px; /* Décalage vers le haut pour laisser de la place au footer */
         }
 
         .buttons {
@@ -80,29 +102,16 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             color: #fff;
-            margin-bottom: 30px; /* Augmenter l'espace entre les sections */
+            margin-bottom: 30px; /* Ajoute de l'espace entre les sections */
             display: block;
-            width: auto; /* La largeur s'ajuste en fonction du contenu */
-            max-width: 80%; /* La largeur ne dépassera pas 80% de la largeur de la page */
-            margin: 0 auto; /* Centrer les sections horizontalement */
+            width: auto;
+            max-width: 80%;
+            margin: 0 auto;
         }
 
         .section h2 {
-            font-size: 2.5em; /* Augmenter la taille des titres */
-            margin-bottom: 10px; /* Un peu d'espace sous les titres */
-        }
-
-        footer {
-            background-color: #313131;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-            background-size: 30px 30px;
-            background-position: -5px -5px;
-            text-align: center;
-            padding: 20px;
-            color: #fff;
-            margin-top: 20px;
-            border-radius: 8px;
-            flex-shrink: 0; /* Empêche le footer de se rétrécir */
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
     </style>
     <script>
