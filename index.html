@@ -13,9 +13,7 @@
             color: #333;
         }
         header {
-            background-image: url('https://media.tenor.com/images/eff7d11b40e837ffb80fc4ffbba98f9b/tenor.gif');
-            background-size: cover;
-            background-position: center;
+            background-color: #222;
             color: #fff;
             padding: 10px 20px;
             text-align: center;
@@ -31,6 +29,7 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
+            cursor: pointer;
         }
         nav a:hover {
             text-decoration: underline;
@@ -44,6 +43,7 @@
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: none;
         }
         footer {
             text-align: center;
@@ -53,15 +53,23 @@
             margin-top: 20px;
         }
     </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>Bienvenue dans l'univers des Sports Mécaniques</h1>
     </header>
     <nav>
-        <a href="#moto">Moto</a>
-        <a href="#auto">Automobile</a>
-        <a href="#karting">Karting</a>
+        <a onclick="showSection('moto')">Moto</a>
+        <a onclick="showSection('auto')">Automobile</a>
+        <a onclick="showSection('karting')">Karting</a>
     </nav>
     <div class="container">
         <div id="moto" class="section">
