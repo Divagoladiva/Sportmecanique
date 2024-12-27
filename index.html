@@ -122,8 +122,8 @@
             overflow-x: hidden;
         }
 
-        /* Fixer le header */
-        header {
+        /* Fixer le header et le footer */
+        header, footer {
             background-color: #313131;
             background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
             background-size: 30px 30px;
@@ -134,13 +134,21 @@
             border-radius: 8px;
             position: fixed;
             width: 100%;
-            top: 0;
             z-index: 10;
         }
 
-        /* Conteneur principal avec des marges pour laisser de l'espace pour le header */
+        header {
+            top: 0;
+        }
+
+        footer {
+            bottom: 0;
+        }
+
+        /* Conteneur principal avec des marges pour laisser de l'espace pour le header et footer */
         .container {
             margin-top: 100px; /* Décalage pour laisser de l'espace pour le header */
+            margin-bottom: 80px; /* Décalage pour laisser de l'espace pour le footer */
             padding: 20px;
             text-align: center;
             flex-grow: 1;
@@ -148,33 +156,9 @@
             position: relative; /* Position relative pour contenir les éléments qui doivent se superposer */
         }
 
-        /* Conteneur des sections avec texte */
-        .section {
-            position: relative; /* Pour garantir qu'elles se placent au-dessus du fond animé */
-            margin-top: 30px;
-            background: #313131;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-            background-size: 30px 30px;
-            background-position: -5px -5px;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            color: #fff;
-            margin-bottom: 30px;
-            width: 60%; /* Largeur ajustée */
-            margin-left: auto;
-            margin-right: auto;
-            z-index: 10; /* Plus élevé que les boutons */
-        }
-
-        .section h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        /* Conteneur des boutons déplacé en bas */
+        /* Conteneur des boutons */
         .buttons {
-            margin-top: 40px;
+            margin-bottom: 30px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -205,6 +189,30 @@
             transform: translate(0.05em, 0.05em);
             box-shadow: 0.05em 0.05em;
         }
+
+        /* Conteneur des sections avec texte */
+        .section {
+            position: relative; /* Pour garantir qu'elles se placent au-dessus du fond animé */
+            margin-top: 30px;
+            background: #313131;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+            background-size: 30px 30px;
+            background-position: -5px -5px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: #fff;
+            margin-bottom: 30px;
+            width: 60%; /* Largeur ajustée */
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 3; /* Placé plus bas que le conteneur du titre */
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
     </style>
     <script>
         function scrollToSection(id) {
@@ -222,6 +230,12 @@
     </header>
 
     <div class="container">
+        <div class="buttons">
+            <button onclick="scrollToSection('moto')">Moto</button>
+            <button onclick="scrollToSection('auto')">Automobile</button>
+            <button onclick="scrollToSection('karting')">Karting</button>
+        </div>
+        
         <!-- Sections de contenu -->
         <div id="moto" class="section">
             <h2>Moto</h2>
@@ -235,13 +249,10 @@
             <h2>Karting</h2>
             <p>Le karting est souvent la première étape pour les pilotes en herbe. Accessible à tous, il est parfait pour s'initier aux sports mécaniques.</p>
         </div>
-
-        <!-- Conteneur des boutons déplacé en dessous des sections -->
-        <div class="buttons">
-            <button onclick="scrollToSection('moto')">Moto</button>
-            <button onclick="scrollToSection('auto')">Automobile</button>
-            <button onclick="scrollToSection('karting')">Karting</button>
-        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Tous droits réservés | Sports Mécaniques</p>
+    </footer>
 </body>
 </html>
