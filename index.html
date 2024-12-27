@@ -13,10 +13,14 @@
             color: #333;
         }
         header {
-            background-color: #222;
+            background-color: #313131;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+            background-size: 30px 30px;
+            background-position: -5px -5px;
             color: #fff;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
+            border-radius: 8px;
         }
         .container {
             width: 100%;
@@ -27,9 +31,13 @@
                 linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
             background-size: 55px 55px;
             text-align: center;
+            padding: 20px;
         }
         .buttons {
             margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         /* From Uiverse.io by cssbuttons-io */
         button {
@@ -41,11 +49,11 @@
             box-sizing: border-box;
             color: #ffffff;
             display: flex;
-            font-size: 18px;
+            font-size: 20px;
             justify-content: center;
             line-height: 1em;
             max-width: 100%;
-            min-width: 140px;
+            min-width: 180px;
             padding: 3px;
             text-decoration: none;
             user-select: none;
@@ -54,7 +62,7 @@
             white-space: nowrap;
             cursor: pointer;
             transition: all 0.3s;
-            margin: 10px;
+            margin: 15px;
         }
 
         button:active,
@@ -64,7 +72,7 @@
 
         button span {
             background-color: rgb(5, 6, 45);
-            padding: 16px 24px;
+            padding: 20px 30px;
             border-radius: 6px;
             width: 100%;
             height: 100%;
@@ -89,13 +97,18 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             display: none;
+            color: #fff;
         }
         footer {
+            background-color: #313131;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+            background-size: 30px 30px;
+            background-position: -5px -5px;
             text-align: center;
-            padding: 10px 20px;
-            background-color: #222;
+            padding: 20px;
             color: #fff;
             margin-top: 20px;
+            border-radius: 8px;
         }
     </style>
     <script>
