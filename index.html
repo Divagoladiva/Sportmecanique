@@ -68,13 +68,28 @@
         }
 
         /* Conteneur principal avec des marges pour laisser de l'espace pour le header */
-        .container {
-            margin-top: 120px; /* Décalage pour laisser de l'espace pour le header et le titre */
+        .content {
+            margin-top: 120px; /* Décalage pour laisser de l'espace pour le header */
             padding: 20px;
             text-align: center;
             flex-grow: 1;
-            overflow-y: auto;
-            position: relative; /* Position relative pour contenir les éléments qui doivent se superposer */
+            position: relative;
+        }
+
+        /* Titre de la section "Qu'est-ce que les sports mécaniques ?" */
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        /* Texte de la définition */
+        .definition {
+            font-size: 1.2em;
+            color: #fff;
+            margin-bottom: 30px;
+            font-style: italic;
         }
 
         /* Conteneur des boutons */
@@ -109,22 +124,6 @@
         button:active {
             transform: translate(0.05em, 0.05em);
             box-shadow: 0.05em 0.05em;
-        }
-
-        /* Titre de la section "Qu'est-ce que les sports mécaniques ?" */
-        .title {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        /* Texte de la définition */
-        .definition {
-            font-size: 1.2em;
-            color: #fff;
-            margin-bottom: 30px;
-            font-style: italic;
         }
 
         /* Conteneur des sections avec texte */
@@ -195,28 +194,30 @@
 
     <div class="container">
         <!-- Titre et définition des sports mécaniques -->
-        <div class="title">Qu'est-ce que les sports mécaniques ?</div>
-        <div class="definition">
-            Les sports mécaniques regroupent toutes les disciplines où des véhicules à moteur participent à des compétitions. Ces sports incluent des courses sur route, sur circuit, des rallyes, du karting, des courses de dragsters, et bien plus encore. Les pilotes doivent maîtriser la vitesse, la technique et la gestion de leur véhicule.
-        </div>
+        <div class="content">
+            <div class="title">Qu'est-ce que les sports mécaniques ?</div>
+            <div class="definition">
+                Les sports mécaniques regroupent toutes les disciplines où des véhicules à moteur participent à des compétitions. Ces sports incluent des courses sur route, sur circuit, des rallyes, du karting, des courses de dragsters, et bien plus encore. Les pilotes doivent maîtriser la vitesse, la technique et la gestion de leur véhicule.
+            </div>
 
-        <div class="buttons">
-            <button onclick="scrollToSection('moto')">Moto</button>
-            <button onclick="scrollToSection('auto')">Automobile</button>
-            <button onclick="scrollToSection('karting')">Karting</button>
-            <button onclick="scrollToSection('quad')">Quad</button>
-            <button onclick="scrollToSection('rallye')">Rallye</button>
-            <button onclick="scrollToSection('drag')">Dragster</button>
-            <button onclick="scrollToSection('ex1')">Exemple 1</button>
-            <button onclick="scrollToSection('ex2')">Exemple 2</button>
-            <button onclick="scrollToSection('ex3')">Exemple 3</button>
-            <button onclick="scrollToSection('ex4')">Exemple 4</button>
-            <button onclick="scrollToSection('ex5')">Exemple 5</button>
-            <button onclick="scrollToSection('ex6')">Exemple 6</button>
-            <button onclick="scrollToSection('ex7')">Exemple 7</button>
-            <button onclick="scrollToSection('ex8')">Exemple 8</button>
-            <button onclick="scrollToSection('ex9')">Exemple 9</button>
-            <button onclick="scrollToSection('ex10')">Exemple 10</button>
+            <div class="buttons">
+                <button onclick="scrollToSection('moto')">Moto</button>
+                <button onclick="scrollToSection('auto')">Automobile</button>
+                <button onclick="scrollToSection('karting')">Karting</button>
+                <button onclick="scrollToSection('quad')">Quad</button>
+                <button onclick="scrollToSection('rallye')">Rallye</button>
+                <button onclick="scrollToSection('drag')">Dragster</button>
+                <button onclick="scrollToSection('ex1')">Exemple 1</button>
+                <button onclick="scrollToSection('ex2')">Exemple 2</button>
+                <button onclick="scrollToSection('ex3')">Exemple 3</button>
+                <button onclick="scrollToSection('ex4')">Exemple 4</button>
+                <button onclick="scrollToSection('ex5')">Exemple 5</button>
+                <button onclick="scrollToSection('ex6')">Exemple 6</button>
+                <button onclick="scrollToSection('ex7')">Exemple 7</button>
+                <button onclick="scrollToSection('ex8')">Exemple 8</button>
+                <button onclick="scrollToSection('ex9')">Exemple 9</button>
+                <button onclick="scrollToSection('ex10')">Exemple 10</button>
+            </div>
         </div>
         
         <!-- Sections de contenu -->
