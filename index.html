@@ -71,9 +71,10 @@
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: none;
             color: #fff;
+            margin-bottom: 20px;
         }
+
         footer {
             background-color: #313131;
             background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
@@ -87,11 +88,9 @@
         }
     </style>
     <script>
-        function showSection(id) {
-            document.querySelectorAll('.section').forEach(section => {
-                section.style.display = 'none';
-            });
-            document.getElementById(id).style.display = 'block';
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            section.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     </script>
 </head>
@@ -101,9 +100,9 @@
     </header>
     <div class="container">
         <div class="buttons">
-            <button onclick="showSection('moto')">Moto</button>
-            <button onclick="showSection('auto')">Automobile</button>
-            <button onclick="showSection('karting')">Karting</button>
+            <button onclick="scrollToSection('moto')">Moto</button>
+            <button onclick="scrollToSection('auto')">Automobile</button>
+            <button onclick="scrollToSection('karting')">Karting</button>
         </div>
         <div id="moto" class="section">
             <h2>Moto</h2>
