@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            overflow-x: hidden; /* Désactive le défilement horizontal */
         }
         header {
             background-color: #313131;
@@ -90,7 +91,11 @@
     <script>
         function scrollToSection(id) {
             const section = document.getElementById(id);
-            section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            section.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center', 
+                inline: 'nearest'  // Empêche le défilement horizontal
+            });
         }
     </script>
 </head>
