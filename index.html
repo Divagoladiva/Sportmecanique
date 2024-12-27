@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Mécaniques</title>
     <style>
-        /* Fond animé dynamique avec pixelisation et dégradé de couleurs */
+        /* Fond dynamique */
         .container::after {
             content: "";
             position: absolute;
             inset: 0;
-            z-index: -1; /* Assurer que le fond soit derrière tout le reste */
+            z-index: 1;
             background-image: radial-gradient(
                 circle at 50% 50%, #0000 0, #0000 2px, hsl(0 0 4%) 2px
             );
@@ -28,6 +28,105 @@
             }
         }
 
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            --c: #09f;
+            background-color: #000;
+            background-image: radial-gradient(4px 100px at 0px 235px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 235px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 117.5px, var(--c) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 252px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 252px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 126px, var(--c) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 150px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 150px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 75px, var(--c) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 253px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 253px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 126.5px, var(--c) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 204px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 204px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 102px, var(--c) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 134px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 134px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 67px, var(--c) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 179px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 179px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 89.5px, var(--c) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 299px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 299px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 149.5px, var(--c) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 215px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 215px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 107.5px, var(--c) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 281px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 281px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 140.5px, var(--c) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 158px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 158px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 79px, var(--c) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 210px, var(--c), #0000),
+                radial-gradient(4px 100px at 300px 210px, var(--c), #0000),
+                radial-gradient(1.5px 1.5px at 150px 105px, var(--c) 100%, #0000 150%);
+            background-size:
+                300px 235px,
+                300px 235px,
+                300px 235px,
+                300px 252px,
+                300px 252px,
+                300px 252px,
+                300px 150px,
+                300px 150px,
+                300px 150px,
+                300px 253px,
+                300px 253px,
+                300px 253px,
+                300px 204px,
+                300px 204px,
+                300px 204px,
+                300px 134px,
+                300px 134px,
+                300px 134px,
+                300px 179px,
+                300px 179px,
+                300px 179px,
+                300px 299px,
+                300px 299px,
+                300px 299px,
+                300px 215px,
+                300px 215px,
+                300px 215px,
+                300px 281px,
+                300px 281px,
+                300px 281px,
+                300px 158px,
+                300px 158px,
+                300px 158px,
+                300px 210px,
+                300px 210px,
+                300px 210px;
+            animation: hi 150s linear infinite;
+        }
+
+        @keyframes hi {
+            0% {
+                background-position:
+                    0px 220px,
+                    3px 220px,
+                    151.5px 337.5px,
+                    25px 24px;
+            }
+            to {
+                background-position:
+                    0px 6800px,
+                    3px 6800px,
+                    151.5px 6917.5px,
+                    25px 13632px;
+            }
+        }
+
         /* Style général du body */
         body {
             font-family: Arial, sans-serif;
@@ -39,7 +138,6 @@
             flex-direction: column;
             min-height: 100vh;
             overflow-x: hidden;
-            position: relative; /* Permet d'assurer que le contenu reste au-dessus du fond */
         }
 
         /* Fixer le header et le footer */
@@ -69,110 +167,21 @@
         .container {
             margin-top: 100px; /* Décalage pour laisser de l'espace pour le header */
             margin-bottom: 80px; /* Décalage pour laisser de l'espace pour le footer */
+            flex: 1;
             padding: 20px;
-            text-align: center;
-            flex-grow: 1;
-            overflow-y: auto;
-            position: relative;
-            z-index: 2; /* Assurer que le contenu soit au-dessus du fond */
-        }
-
-        /* Conteneur des boutons */
-        .buttons {
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            z-index: 3; /* Assurer que les boutons soient au-dessus du fond */
-        }
-
-        /* Style des boutons */
-        button {
-            background: #fbca1f;
-            font-family: inherit;
-            padding: 0.6em 1.3em;
-            font-weight: 900;
-            font-size: 18px;
-            border: 3px solid black;
-            border-radius: 0.4em;
-            box-shadow: 0.1em 0.1em;
-            cursor: pointer;
-            margin: 10px;
-        }
-
-        button:hover {
-            transform: translate(-0.05em, -0.05em);
-            box-shadow: 0.15em 0.15em;
-        }
-
-        button:active {
-            transform: translate(0.05em, 0.05em);
-            box-shadow: 0.05em 0.05em;
-        }
-
-        /* Style des sections (espaces et tailles ajustées) */
-        .section {
-            margin-top: 30px;
-            background: #313131;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-            background-size: 30px 30px;
-            background-position: -5px -5px;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            color: #fff;
-            margin-bottom: 30px;
-            width: 60%; /* Largeur ajustée */
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            z-index: 2; /* Assurer que les sections de texte soient au-dessus du fond */
-        }
-
-        .section h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
         }
     </style>
-    <script>
-        function scrollToSection(id) {
-            const section = document.getElementById(id);
-            section.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    </script>
 </head>
 <body>
     <header>
-        <h1>Bienvenue dans l'univers des Sports Mécaniques</h1>
+        <h1>Sports Mécaniques</h1>
     </header>
-
     <div class="container">
-        <div class="buttons">
-            <button onclick="scrollToSection('moto')">Moto</button>
-            <button onclick="scrollToSection('auto')">Automobile</button>
-            <button onclick="scrollToSection('karting')">Karting</button>
-        </div>
-        
-        <!-- Sections de contenu -->
-        <div id="moto" class="section">
-            <h2>Moto</h2>
-            <p>Les courses de moto, comme le MotoGP et le Superbike, offrent des sensations fortes. Ces compétitions mettent en avant l'adresse des pilotes et la technologie des machines.</p>
-        </div>
-        <div id="auto" class="section">
-            <h2>Automobile</h2>
-            <p>Les sports automobiles, notamment la Formule 1, le rallye et les courses d'endurance comme les 24 heures du Mans, combinent vitesse, stratégie et travail d'équipe.</p>
-        </div>
-        <div id="karting" class="section">
-            <h2>Karting</h2>
-            <p>Le karting est souvent la première étape pour les pilotes en herbe. Accessible à tous, il est parfait pour s'initier aux sports mécaniques.</p>
-        </div>
+        <h2>Bienvenue dans le monde des sports mécaniques!</h2>
+        <p>Explorez les dernières nouvelles, événements, et bien plus!</p>
     </div>
-
     <footer>
-        <p>&copy; 2024 Tous droits réservés | Sports Mécaniques</p>
+        <p>© 2024 Sports Mécaniques</p>
     </footer>
 </body>
 </html>
