@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Mécaniques</title>
     <style>
-        /* Fond dynamique */
-        .container::after {
+        /* Fond dynamique prenant toute la page, même en défilant */
+        body::after {
             content: "";
-            position: absolute;
+            position: fixed;
             inset: 0;
-            z-index: 1;
+            z-index: -1; /* S'assurer que le fond soit derrière tout le contenu */
             background-image: radial-gradient(
                 circle at 50% 50%, #0000 0, #0000 2px, hsl(0 0 4%) 2px
             );
@@ -28,38 +28,6 @@
             }
         }
 
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            --c: #09f;
-            background-color: #000;
-            background-image: radial-gradient(4px 100px at 0px 235px, var(--c), #0000),
-                radial-gradient(4px 100px at 300px 235px, var(--c), #0000),
-                radial-gradient(1.5px 1.5px at 150px 117.5px, var(--c) 100%, #0000 150%);
-            background-size:
-                300px 235px,
-                300px 235px,
-                300px 235px;
-            animation: hi 150s linear infinite;
-        }
-
-        @keyframes hi {
-            0% {
-                background-position:
-                    0px 220px,
-                    3px 220px,
-                    151.5px 337.5px;
-            }
-            to {
-                background-position:
-                    0px 6800px,
-                    3px 6800px,
-                    151.5px 6917.5px;
-            }
-        }
-
-        /* Style général du body */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -70,6 +38,7 @@
             flex-direction: column;
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
         }
 
         /* Fixer le header */
