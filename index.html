@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Mécaniques</title>
     <style>
-        /* Fond dynamique avec rayures */
         .container {
             width: 100%;
             height: 100%;
@@ -17,13 +16,11 @@
             position: relative;
             z-index: 1; /* Fond au bas */
         }
-
-        /* Fond dynamique prenant toute la page, même en défilant */
         body::after {
             content: "";
             position: fixed;
             inset: 0;
-            z-index: -1; /* S'assurer que le fond soit derrière tout le contenu */
+            z-index: -1;
             background-color: #191a1a;
             background-image: linear-gradient(
                 0deg,
@@ -52,8 +49,6 @@
             overflow-x: hidden;
             position: relative;
         }
-
-        /* Fixer le header */
         header {
             background-color: #313131;
             background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
@@ -68,44 +63,34 @@
             top: 0;
             z-index: 10;
         }
-
-        /* Conteneur principal avec des marges pour laisser de l'espace pour le header */
         .content {
-            margin-top: 120px; /* Décalage pour laisser de l'espace pour le header */
+            margin-top: 120px;
             padding: 20px;
             text-align: center;
             flex-grow: 1;
             position: relative;
-            z-index: 2; /* Assurez-vous que le texte est au-dessus du fond dynamique */
+            z-index: 2;
         }
-
-        /* Titre de la section "Qu'est-ce que les sports mécaniques ?" */
         .title {
             font-size: 2.5em;
             font-weight: bold;
-            color: #fff; /* Couleur blanche pour le texte */
+            color: #fff;
             margin-bottom: 20px;
         }
-
-        /* Texte de la définition */
         .definition {
             font-size: 1.2em;
-            color: #f1f1f1; /* Une couleur plus claire pour améliorer le contraste */
+            color: #f1f1f1;
             margin-bottom: 30px;
             font-style: italic;
         }
-
-        /* Conteneur des boutons */
         .buttons {
             margin-bottom: 30px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             position: relative;
-            z-index: 5; /* Plus bas que les sections */
+            z-index: 5;
         }
-
-        /* Style des boutons */
         button {
             background: #fbca1f;
             font-family: inherit;
@@ -118,7 +103,6 @@
             cursor: pointer;
             margin: 10px;
         }
-
         button:hover {
             transform: translate(-0.05em, -0.05em);
             box-shadow: 0.15em 0.15em;
@@ -128,8 +112,6 @@
             transform: translate(0.05em, 0.05em);
             box-shadow: 0.05em 0.05em;
         }
-
-        /* Conteneur des sections avec texte */
         .section {
             position: relative;
             margin-top: 30px;
@@ -142,24 +124,22 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             color: #fff;
             margin-bottom: 30px;
-            width: 60%; /* Largeur ajustée */
+            width: 60%;
             margin-left: auto;
             margin-right: auto;
-            z-index: 5; /* Plus bas que le conteneur du titre */
+            z-index: 5;
         }
 
         .section h2 {
             font-size: 2em;
             margin-bottom: 10px;
         }
-
-        /* Animation des points (fond dynamique) */
         .container::after {
             content: "";
             position: absolute;
             inset: 0;
-            z-index: 1; /* S'assurer que le fond est derrière */
-            background-color: #191a1a; /* Fond uni sans pixel rond */
+            z-index: 1;
+            background-color: #191a1a;
             background-image: linear-gradient(
                 0deg,
                 transparent 24%,
@@ -178,11 +158,7 @@
     <script>
         function scrollToSection(id) {
             const section = document.getElementById(id);
-
-            // Calcule la position pour centrer la section dans la fenêtre
             const offset = section.offsetTop - (window.innerHeight / 2) + (section.offsetHeight / 2);
-
-            // Défilement avec un comportement smooth
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
@@ -196,7 +172,6 @@
     </header>
 
     <div class="container">
-        <!-- Titre et définition des sports mécaniques -->
         <div class="content">
             <div class="title">Qu'est-ce que les sports mécaniques ?</div>
             <div class="definition">
@@ -222,8 +197,6 @@
                 <button onclick="scrollToSection('ex10')">Exemple 10</button>
             </div>
         </div>
-        
-        <!-- Sections de contenu -->
         <div id="moto" class="section">
             <h2>Moto</h2>
             <p>Les courses de moto, comme le MotoGP et le Superbike, offrent des sensations fortes. Ces compétitions mettent en avant l'adresse des pilotes et la technologie des machines.</p>
