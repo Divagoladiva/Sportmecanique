@@ -164,6 +164,9 @@
                 behavior: 'smooth'
             });
         }
+        function redirect(id) {
+            window.location.href = '(id)';
+        }
     </script>
 </head>
 <body>
@@ -200,7 +203,7 @@
         <div id="moto" class="section">
             <h2>Moto</h2>
             <p>Les courses de moto, comme le MotoGP et le Superbike, offrent des sensations fortes. Ces compétitions mettent en avant l'adresse des pilotes et la technologie des machines.</p>
-            <div id="buttons">href="https://fr.wikipedia.org/wiki/Sport_m%C3%A9canique"><button></button></a>
+            <button onclick="redirect('https://fr.wikipedia.org/wiki/Sport_m%C3%A9canique')">Plus d'informations</button>
         </div>
         <div id="auto" class="section">
             <h2>Automobile</h2>
